@@ -54,7 +54,7 @@ def gen_embeddings(model_name, sentences, out_name):
     embedding_tensor = torch.stack(all_embeddings)
     
     # 5. Write to TensorBoard
-    writer = SummaryWriter(log_dir="runs/loop_embeddings_example")
+    writer = SummaryWriter(log_dir="runs/" + out_name)
     writer.add_embedding(embedding_tensor, metadata=all_labels)
     writer.close()
 
